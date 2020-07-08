@@ -1,32 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <b-container class="py-4">
+      <div class="d-flex flex-column align-items-center">
+        <div class="mb-2">
+          <img width="240" height="102" alt="logo" src="./assets/star-wars-logo.png">
+        </div>
+        <h1 class="font-weight-bold">Favourite heroes project</h1>
+        <b-nav>
+          <b-nav-item><router-link :to="{ name: 'home'} ">Home</router-link></b-nav-item>
+          <b-nav-item><router-link :to="{ name: 'favourite'} ">Favourite</router-link></b-nav-item>
+        </b-nav>
+      </div>
+      <router-view/>
+    </b-container>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html {
+  font-size: 16px;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+a {
+  color: white;
+  &:hover {
+    color: white;
   }
+}
+body {
+  background-size: cover;
+  background: fixed #080808 url('./assets/star-wars-bg.jpg') 50% 50% no-repeat;
+  font-family: 'New Gothic', Helvetica, Arial, sans-serif;
+  color: white;
 }
 </style>
