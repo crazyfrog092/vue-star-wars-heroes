@@ -7,12 +7,13 @@
 	  	</b-col>
   	</b-row>
 		<b-row>
-			<b-col v-for="item in heroesData.heroes" cols="12" sm="6" md="4" lg="3">
-		  	<HeroCard 
-		  		:key="item.id" 
+			<b-col v-for="item in heroesData.heroes" :key="item.id" cols="12" sm="6" md="4" lg="3">
+		  	<HeroCard
+		  		:id="item.id"
 		  		:img="item.img" 
 		  		:name="item.name" 
 		  		:homeworld="item.homeworld"
+		  		:isFavourite="false"
 		  	/>
 	  	</b-col>
 		</b-row>
